@@ -20,7 +20,7 @@ setup() {
 setup apt
 setup docker
 setup java
-#node
+setup node
 
 #zsh
 #ohmyzsh #commonenv
