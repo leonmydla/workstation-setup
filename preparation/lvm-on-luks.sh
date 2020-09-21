@@ -58,4 +58,4 @@ mkswap /dev/$lvm_group/$swap_name
 
 encrypted_disk_uuid=`blkid $virtual_decrypted_disk | sed -n 's/.*UUID=\"\([^\"]*\)\".*/\1/p'`
 
-echo "cryptdevice=UUID="
+echo "cryptdevice=UUID=$encrypted_disk_uuid:cryptlvm root=/dev/$lvm_group/$root_name"
