@@ -24,6 +24,7 @@ setup apt
 setup docker
 setup java
 setup node
+setup ansible
 
 setup shell
 setup ssh
