@@ -19,11 +19,11 @@ setup() {
 
 setup apt
 setup docker
-#java
+setup java
 #node
 
 #zsh
-#ohmyzsh
+#ohmyzsh #commonenv
 #private key
 
 # gnome
