@@ -22,8 +22,7 @@ setup docker
 setup java
 setup node
 
-#zsh
-#ohmyzsh #commonenv
+setup shell
 #private key
 
 # gnome
