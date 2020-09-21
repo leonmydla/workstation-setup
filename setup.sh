@@ -14,7 +14,10 @@ if [ $# -ne 0 ]; then
 fi
 
 setup() {
+  echo "Setting up ${0} ..."
   ${dir}/setup/${0}.sh
+  echo "Done: ${0} !"
+  echo ""
 }
 
 setup apt
@@ -23,7 +26,8 @@ setup java
 setup node
 
 setup shell
-#private key
+setup ssh
+setup git
 
 # gnome
 #  appindicators gnome-shell-extension-appindicator
