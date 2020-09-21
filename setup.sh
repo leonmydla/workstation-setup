@@ -14,9 +14,9 @@ if [ $# -ne 0 ]; then
 fi
 
 setup() {
-  echo "Setting up ${0} ..."
+  echo "Setting up $0 ..."
   ${dir}/setup/${0}.sh
-  echo "Done: ${0} !"
+  echo "Done: $0 !"
   echo ""
 }
 
@@ -32,14 +32,4 @@ setup git
 
 setup gnome
 
-# applications
-#spotify
-#jetbrains
-#chrome
-#chromium
-#discord
-#dropbox
-#gimp
-#inkscape
-#skype #snap
-#teams
+setup applications
