@@ -2,6 +2,11 @@
 
 set -eux
 
+quit() {
+  echo "$@"
+  exit 1
+}
+
 dir=$(dirname $(realpath $0))
 
 if [ $# -ne 0 ]; then
@@ -13,7 +18,7 @@ setup() {
 }
 
 setup apt
-#docker
+setup docker
 #java
 #node
 

@@ -2,6 +2,11 @@
 
 set -eu
 
+quit() {
+  echo "$@"
+  exit 1
+}
+
 if [ $# -ne 0 ]; then
   quit "./apt.sh"
 fi
