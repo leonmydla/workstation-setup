@@ -29,11 +29,7 @@ setup shell
 setup ssh
 setup git
 
-# gnome
-#  appindicators gnome-shell-extension-appindicator
-#  disable desktop icons gnome-shell-extension-desktop-icons
-#  hide activities gnome-shell-extension-hide-activities
-#  super+e browser shortcut
+setup gnome
 
 # applications
 #spotify
