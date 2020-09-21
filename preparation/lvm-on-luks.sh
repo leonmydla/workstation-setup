@@ -45,7 +45,6 @@ lvm_group=CryptLvmGroup
 swap_name=swap
 root_name=root
 
-exit 1
 cryptsetup luksFormat $device_disk
 cryptsetup open $device_disk $encryption_name
 
