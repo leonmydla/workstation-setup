@@ -37,7 +37,14 @@ jetbrains_install() {
 
   cd $toolbox_folder
   tar -zxvf $toolbox_file
-  ./jetbrains-toolbox-*/jetbrains-toolbox &
+
+  toolbox_bin=$toolbox_folder/jetbrains-toolbox-*/jetbrains-toolbox
+
+  if ! [[ -f $toolbox_bin ]]; then
+    quit "Jetbrains Toolbox binary not found"
+  fi
+
+  $toolbox_bin &
 
   sleep 30
 
