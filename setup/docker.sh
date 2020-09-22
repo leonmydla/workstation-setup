@@ -25,7 +25,7 @@ sudo bash -c "curl -fsSL https://download.docker.com/linux/ubuntu/gpg > $key"
 sudo gpg --no-defaul-keyring --keyring $gpg --import $key
 sudo rm $key
 
-sudo echo "deb [arch=amd64] https://download.docker.com/linux/ubuntu $(lsb_release -cs) stable" > /etc/apt/sources.list.d/docker.list
+sudo bash -c "echo \"deb [arch=amd64] https://download.docker.com/linux/ubuntu $(lsb_release -cs) stable\" > /etc/apt/sources.list.d/docker.list"
 
 sudo apt-get update
 sudo apt-get install -y \
@@ -34,9 +34,9 @@ sudo apt-get install -y \
   containerd.io
 
 docker_group=docker
-$docker_old_gid=$(getent group $docker_group | cut --delimiter=: --fields=3)
-$docker_new_gid=999
-$old_gid_999=$(getent group $docker_new_gid | cut --delimiter=: --fields=3)
+docker_old_gid=$(getent group $docker_group | cut --delimiter=: --fields=3)
+docker_new_gid=999
+old_gid_999=$(getent group $docker_new_gid | cut --delimiter=: --fields=1)
 
 if [[ $docker_old_gid -eq $docker_new_gid ]]; then
   quit "Docker already has the correct gid"
@@ -44,13 +44,13 @@ fi
 
 temp_gid=60000
 
-for i in {60000...65000}; do
-  if [[ $(getent group $i | wc --chars) -le 0 ]]
+for i in $(seq 60000 60100); do
+  if [[ $(getent group $i | wc --chars) -le 0 ]]; then
     temp_gid=$i
     break
   fi
 done
 
-groupmod --gid $temp_gid $old_gid_999
-groupmod --gid $docker_new_gid $docker_group
-groupmod --gid $docker_old_gid $old_gid_999
+sudo groupmod --gid $temp_gid $old_gid_999
+sudo groupmod --gid $docker_new_gid $docker_group
+sudo groupmod --gid $docker_old_gid $old_gid_999
