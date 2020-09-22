@@ -19,7 +19,7 @@ run_install() {
 }
 
 chrome_install() {
-  echo "deb [arch=amd64] http://dl.google.com/linux/chrome/deb/ stable main" > /etc/apt/sources.list.d/google-chrome.list
+  sudo bash -c "echo \"deb [arch=amd64] http://dl.google.com/linux/chrome/deb/ stable main\" > /etc/apt/sources.list.d/google-chrome.list"
   sudo apt-get update
   sudo apt-get install -y google-chrome-stable
 }
