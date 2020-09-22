@@ -16,6 +16,7 @@ zshrc=$HOME/.zshrc
 zshrc_old=${zshrc}.old
 
 sudo apt-get install -y \
+  zsh \
   curl \
   git
 
