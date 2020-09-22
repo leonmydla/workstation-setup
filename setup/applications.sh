@@ -77,6 +77,7 @@ run_install Dropbox dropbox_install
 run_install Discord discord_install
 run_install Gimp "sudo apt-get install gimp"
 run_install Inkscape "sudo apt-get install inkscape"
+run_install "Pulse Audio Volume Control" "sudo apt-get install pavucontrol"
 
 snap_install spotify
 snap_install chromium
