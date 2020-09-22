@@ -12,7 +12,7 @@ if [ $# -ne 0 ]; then
 fi
 
 sources_list() {
-  sudo bash -c 'echo "${1}" >> /etc/apt/sources.list'
+  sudo bash -c "echo \"${1}\" >> /etc/apt/sources.list"
 }
 
 sudo bash -c "> /etc/apt/sources.list"
