@@ -18,12 +18,7 @@ sudo apt-get install -y \
   gnupg-agent \
   software-properties-common
 
-key=/tmp/tmp-apt-docker.key
-gpg=/etc/apt/trusted.gpg.d/docker.gpg
-
-sudo bash -c "curl -fsSL https://download.docker.com/linux/ubuntu/gpg > $key"
-sudo gpg --no-defaul-keyring --keyring $gpg --import $key
-sudo rm $key
+curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -
 
 sudo bash -c "echo \"deb [arch=amd64] https://download.docker.com/linux/ubuntu $(lsb_release -cs) stable\" > /etc/apt/sources.list.d/docker.list"
 
