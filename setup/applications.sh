@@ -36,11 +36,9 @@ jetbrains_install() {
   wget $toolbox_url -O $toolbox_file
 
   cd $toolbox_folder
-  tar -zxvf $toolbox_file
+  toolbox_bin=$toolbox_folder/$(tar -zxvf $toolbox_file | grep -e "jetbrains-toolbox⁻[0-9\.]+/jetbrains-toolbox$")
 
-  toolbox_bin=$toolbox_folder/jetbrains-toolbox-*/jetbrains-toolbox
-
-  if ! [[ -f $toolbox_bin ]]; then
+  if ! [[ $toolbox_bin =~ $toolbox_folder/jetbrains-toolbox-[0-9\.]+/jetbrains-toolbox$ ]]; then
     quit "Jetbrains Toolbox binary not found"
   fi
 
