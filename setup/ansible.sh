@@ -11,6 +11,6 @@ if [ $# -ne 0 ]; then
   quit "./ansible.sh"
 fi
 
-sudo apt-get install ansible
+sudo apt-get install -y ansible
 
 echo "stdout_callback = yaml" >> /etc/ansible/ansible.cfg

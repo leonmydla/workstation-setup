@@ -15,7 +15,9 @@ lib=$HOME/lib
 zshrc=$HOME/.zshrc
 zshrc_old=${zshrc}.old
 
-sudo apt-get install curl git
+sudo apt-get install -y \
+  curl \
+  git
 
 curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh | bash -
 

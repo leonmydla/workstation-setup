@@ -21,7 +21,7 @@ run_install() {
 chrome_install() {
   echo "deb [arch=amd64] http://dl.google.com/linux/chrome/deb/ stable main" > /etc/apt/sources.list.d/google-chrome.list
   sudo apt-get update
-  sudo apt-get install google-chrome-stable
+  sudo apt-get install -y google-chrome-stable
 }
 
 jetbrains_install() {
@@ -75,9 +75,9 @@ run_install Chrome chrome_install
 run_install "Jetbrains Toolbox" jetbrains_install
 run_install Dropbox dropbox_install
 run_install Discord discord_install
-run_install Gimp "sudo apt-get install gimp"
-run_install Inkscape "sudo apt-get install inkscape"
-run_install "Pulse Audio Volume Control" "sudo apt-get install pavucontrol"
+run_install Gimp "sudo apt-get install -y gimp"
+run_install Inkscape "sudo apt-get install -y inkscape"
+run_install "Pulse Audio Volume Control" "sudo apt-get install -y pavucontrol"
 
 snap_install spotify
 snap_install chromium

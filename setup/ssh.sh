@@ -11,7 +11,7 @@ if [ $# -ne 0 ]; then
   quit "./ssh.sh"
 fi
 
-sudo apt-get install openssh-client
+sudo apt-get install -y openssh-client
 
 config() {
   echo "${1}" >> $HOME/.ssh/config

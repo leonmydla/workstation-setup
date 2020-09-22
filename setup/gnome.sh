@@ -11,11 +11,11 @@ if [ $# -ne 0 ]; then
   quit "./gnome.sh"
 fi
 
-sudo apt-get install \
+sudo apt-get install -y \
   gnome-shell-extension-appindicator \
   gnome-shell-extension-hide-activities
 
-sudo apt-get remove gnome-shell-extension-desktop-icons
+sudo apt-get remove -y gnome-shell-extension-desktop-icons
 
 killall -SIGQUIT gnome-shell
 

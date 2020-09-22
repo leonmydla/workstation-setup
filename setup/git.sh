@@ -13,7 +13,9 @@ fi
 
 gpg_key_conf=/tmp/gpg_key_conf
 
-sudo apt-get install git openssh-client
+sudo apt-get install -y \
+  git \
+  openssh-client
 
 echo "Enter the name to use for git:"
 read git_name
