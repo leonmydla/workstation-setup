@@ -12,9 +12,9 @@ if [ $# -ne 0 ]; then
 fi
 
 run_install() {
-  echo "Installing $0 ..."
-  $1
-  echo "Done: $0 !"
+  echo "Installing $1 ..."
+  $2
+  echo "Done: $1 !"
   echo ""
 }
 
@@ -59,16 +59,16 @@ discord_install() {
 teams_install() {
   teams_file=$HOME/Downloads/teams.deb
 
-  wget "https://go.microsoft.com/fwlink/p/?LinkID=2112886&clcid=0x409&culture=en-us&country=US" -O teams_file
-  sudo dpkg --install teams_file
+  wget "https://go.microsoft.com/fwlink/p/?LinkID=2112886&clcid=0x409&culture=en-us&country=US" -O $teams_file
+  sudo dpkg --install $teams_file
 }
 
 snap_install() {
-  run_install "$0 (snap)" "snap install $0"
+  run_install "$1 (snap)" "snap install $1"
 }
 
 snap_install_classic() {
-  run_install "$0 (snap)" "snap install --classic $0"
+  run_install "$1 (snap)" "snap install --classic $1"
 }
 
 run_install Chrome chrome_install

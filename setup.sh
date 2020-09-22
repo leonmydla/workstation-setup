@@ -14,9 +14,9 @@ if [ $# -ne 0 ]; then
 fi
 
 setup() {
-  echo "Setting up $0 ..."
-  ${dir}/setup/${0}.sh
-  echo "Done: $0 !"
+  echo "Setting up $1 ..."
+  ${dir}/setup/${1}.sh
+  echo "Done: $1 !"
   echo ""
 }
 

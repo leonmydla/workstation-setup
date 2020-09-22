@@ -11,7 +11,7 @@ if [ $# -ne 0 ]; then
   quit "./java.sh"
 fi
 
-sudo apt-get install
+sudo apt-get install \
   openjdk-11-dbg \
   openjdk-11-doc \
   openjdk-11-jdk \

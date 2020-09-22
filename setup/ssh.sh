@@ -13,21 +13,25 @@ fi
 
 sudo apt-get install openssh-client
 
-config=$HOME/.ssh/config
+config() {
+  echo "${1}" >> $HOME/.ssh/config
+}
 
-echo "RSAAuthentication no"           >> $config
-echo "PubkeyAuthentication yes"       >> $config
-echo "IdentityFile $HOME/.ssh/id_ed25519" >> $config
+config "RSAAuthentication no"
+config "PubkeyAuthentication yes"
+config "IdentityFile $HOME/.ssh/id_ed25519"
 
-echo "VisualHostKey yes"              >> $config
-echo "CheckHostIP yes"                >> $config
-echo "StrictHostKeyChecking yes"      >> $config
+config "VisualHostKey yes"
+config "CheckHostIP yes"
+config "StrictHostKeyChecking yes"
 
-echo "ServerAliveInterval 300"        >> $config
-echo "ServerAliveCountMax 1"          >> $config
+config "ServerAliveInterval 300"
+config "ServerAliveCountMax 1"
 
-echo "RhostsAuthentication no"        >> $config
-echo "RhostsRSAAuthentication no"     >> $config
-echo "HostbasedAuthentication no"     >> $config
+config "RhostsAuthentication no"
+config "RhostsRSAAuthentication no"
+config "HostbasedAuthentication no"
 
 ssh-keygen -t ed25519 -a 512 -f $HOME/.ssh/id_ed25519
+
+}
