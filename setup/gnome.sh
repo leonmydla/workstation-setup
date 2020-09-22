@@ -28,7 +28,7 @@ sub_scheme=${main_schema}.custom-keybinding
 nautilus_key=/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/nautilus_shortcut/
 settings=$(gsettings get $main_schema $main_key)
 
-if [[ $settings == *"[]"*]]
+if [[ $settings == *"[]"* ]]
   gsettings set $main_schema $main_key "['${nautilus_key}']"
 elif [[ $settings != *"'${nautilus_key}'"* ]]; then
   gsettings set $main_schema $main_key "${settings%]*}, '${nautilus_key}']"
