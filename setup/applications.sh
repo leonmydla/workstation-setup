@@ -26,6 +26,10 @@ chrome_install() {
 }
 
 jetbrains_install() {
+  if [[ -f $HOME/.local/share/JetBrains/Toolbox/bin/jetbrains-toolbox ]]; then
+    return
+  fi
+
   toolbox_folder=$HOME/Downloads/jetbrains-toolbox
   toolbox_file=$toolbox_folder/toolbox.tar.gz
 
