@@ -32,4 +32,6 @@ config "RhostsAuthentication no"
 config "RhostsRSAAuthentication no"
 config "HostbasedAuthentication no"
 
+config ""
+
 ssh-keygen -t ed25519 -a 512 -f $HOME/.ssh/id_ed25519
