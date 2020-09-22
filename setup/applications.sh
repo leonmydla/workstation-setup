@@ -37,7 +37,7 @@ jetbrains_install() {
 
   cd $toolbox_folder
   tar -zxvf $toolbox_file
-  ./jetbrains-toolsbox-*/jetbrains-toolbox &
+  ./jetbrains-toolbox-*/jetbrains-toolbox &
 
   sleep 30
 
