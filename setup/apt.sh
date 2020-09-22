@@ -15,7 +15,7 @@ sources_list() {
   sudo bash -c 'echo "${1}" >> /etc/apt/sources.list'
 }
 
-> /etc/apt/sources.list
+sudo bash -c "> /etc/apt/sources.list"
 sources_list "deb [arch=amd64] http://archive.ubuntu.com/ubuntu/ $(lsb_release -sc) main restricted universe multiverse"
 sources_list "deb [arch=amd64] http://archive.ubuntu.com/ubuntu/ $(lsb_release -sc)-updates main restricted universe multiverse"
 sources_list "deb [arch=amd64] http://archive.ubuntu.com/ubuntu/ $(lsb_release -sc)-backports main restricted universe multiverse"
