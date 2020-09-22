@@ -32,3 +32,25 @@ sudo apt-get install -y \
   docker-ce \
   docker-ce-cli \
   containerd.io
+
+docker_group=docker
+$docker_old_gid=$(getent group $docker_group | cut --delimiter=: --fields=3)
+$docker_new_gid=999
+$old_gid_999=$(getent group $docker_new_gid | cut --delimiter=: --fields=3)
+
+if [[ $docker_old_gid -eq $docker_new_gid ]]; then
+  quit "Docker already has the correct gid"
+fi
+
+temp_gid=60000
+
+for i in {60000...65000}; do
+  if [[ $(getent group $i | wc --chars) -le 0 ]]
+    temp_gid=$i
+    break
+  fi
+done
+
+groupmod --gid $temp_gid $old_gid_999
+groupmod --gid $docker_new_gid $docker_group
+groupmod --gid $docker_old_gid $old_gid_999
