@@ -31,4 +31,4 @@ sources_list ""
 sources_list "# deb-src http://archive.canonical.com/ubuntu $(lsb_release -sc) partner"
 
 sudo apt-get update
-sudo apt-get upgrade
+sudo apt-get upgrade -y
