@@ -56,6 +56,12 @@ dropbox_install() {
 }
 
 discord_install() {
+  sudo apt install -y \
+    libatomic1 \
+    libgconf-2-4 \
+    libappindicator1 \
+    libc++1
+
   discord_file=$HOME/Downloads/discord.deb
 
   wget "https://discord.com/api/download?platform=linux&format=deb" -O $discord_file
