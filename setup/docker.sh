@@ -11,13 +11,6 @@ if [ $# -ne 0 ]; then
   quit "./docker.sh"
 fi
 
-sudo apt-get remove \
-  docker \
-  docker-engine \
-  docker.io \
-  containerd \
-  runc
-
 sudo apt-get install \
   apt-transport-https \
   ca-certificates \
