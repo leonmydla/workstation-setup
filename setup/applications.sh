@@ -20,6 +20,7 @@ run_install() {
 
 chrome_install() {
   sudo bash -c "echo \"deb [arch=amd64] http://dl.google.com/linux/chrome/deb/ stable main\" > /etc/apt/sources.list.d/google-chrome.list"
+  curl -fsSL "https://dl.google.com/linux/linux_signing_key.pub" | sudo apt-key add -
   sudo apt-get update
   sudo apt-get install -y google-chrome-stable
 }
