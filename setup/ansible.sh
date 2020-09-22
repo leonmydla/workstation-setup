@@ -13,4 +13,4 @@ fi
 
 sudo apt-get install -y ansible
 
-echo "stdout_callback = yaml" >> /etc/ansible/ansible.cfg
+sudo bash -c "echo \"stdout_callback = yaml\" >> /etc/ansible/ansible.cfg"
