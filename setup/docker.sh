@@ -34,7 +34,8 @@ docker_new_gid=999
 old_gid_999=$(getent group $docker_new_gid | cut --delimiter=: --fields=1)
 
 if [[ $docker_old_gid -eq $docker_new_gid ]]; then
-  quit "Docker already has the correct gid"
+  echo "Docker already has the correct gid"
+  break
 fi
 
 temp_gid=60000
